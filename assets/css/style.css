@@ -37,7 +37,7 @@ textarea {
 }
 
 .container {
-  padding: 0;
+  padding: 10px;
 }
 
 /* header */
@@ -841,7 +841,9 @@ textarea {
   content: "";
   position: absolute;
 
-  left: 44%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
   bottom: -39px;
   display: block;
   height: 75px;

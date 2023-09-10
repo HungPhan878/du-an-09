@@ -82,6 +82,13 @@
     />
     <meta name="theme-color" content="#ffffff" />
     <!-- fonts -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -107,6 +114,15 @@
     <div class="container">
       <header class="header">
         <div class="header_inner">
+          <!-- menu-mobile -->
+          <label
+            for="menu-mobile__overplay"
+            class="menu-mobile__icon hidden-pc"
+          >
+            <i class="fa-solid fa-bars" style="color: #7264d6"></i>
+          </label>
+
+          <!-- logo -->
           <div class="header__logo">
             <img
               src="./assets/icons/logo.svg"
@@ -132,8 +148,14 @@
             <li class="header-item">
               <a href="#!" class="header-item__link">Blog</a>
             </li>
+            <li class="header-item hidden-pc">
+              <a href="#!" class="header-item__link">Log in</a>
+            </li>
+            <li class="header-item hidden-pc">
+              <a href="#!" class="header-item__link">Sign up</a>
+            </li>
           </ul>
-          <div class="header__button">
+          <div class="header__button hidden">
             <a href="#!" class="header__login">Log in</a>
             <a href="#!" class="btn header__signup">Sign up</a>
           </div>
@@ -143,7 +165,7 @@
       <!-- hero -->
       <section class="hero">
         <div class="row">
-          <div class="col-lg-6 col-md-12 col-sm-12">
+          <div class="col-lg-6 col-md-12 col-sm-12 col-12">
             <section class="hero__info">
               <p class="section-title hero__title">Digital Smart Wallet</p>
               <h1
@@ -174,7 +196,7 @@
               </p>
             </section>
           </div>
-          <div class="col-lg-5 offset-lg-1 col-md-12 col-sm-12">
+          <div class="col-lg-5 offset-lg-1 col-md-12 col-sm-12 col-12">
             <div class="hero__wrap">
               <div class="hero__phone">
                 <!-- hero card -->
@@ -313,7 +335,7 @@
 
               <!-- security -->
               <div
-                class="hero__secured"
+                class="hero__secured hidden-mobile"
                 data-aos="fade-left"
                 data-aos-duration="2000"
               >
@@ -330,7 +352,7 @@
 
               <!-- interest -->
               <div
-                class="hero__interest"
+                class="hero__interest hidden-mobile"
                 data-aos="flip-right"
                 data-aos-duration="2000"
               >
@@ -342,11 +364,46 @@
         </div>
       </section>
 
+      <!-- menu-mobile -->
+      <div class="menu-mobile hidden-pc">
+        <input
+          type="checkbox"
+          hidden
+          class="menu-mobile__checkbox"
+          name=""
+          id="menu-mobile__overplay"
+        />
+        <label
+          for="menu-mobile__overplay"
+          class="menu-mobile__overplay"
+        ></label>
+        <div class="menu-mobile__sidebar">
+          <div class="menu-mobile__logo">
+            <img
+              src="./assets/icons/logo.svg"
+              alt=""
+              class="header-logo__icon"
+            />
+            <img
+              src="./assets/icons/CeloBank.svg"
+              alt="Celobank"
+              class="header__logo-label"
+            />
+          </div>
+          <ul id="menu-mobile__list"></ul>
+          <script>
+            const mobileList = document.getElementById("menu-mobile__list");
+            const headerList = document.querySelector(".header__list");
+            mobileList.innerHTML = headerList.innerHTML;
+          </script>
+        </div>
+      </div>
+
       <!-- features -->
 
       <section class="features">
         <div class="row">
-          <div class="col-lg-6 col-md-12 col-sm-12">
+          <div class="col-lg-6 col-md-12 col-sm-12 col-12">
             <figure class="features__images">
               <div class="features__wrap">
                 <img
@@ -364,7 +421,10 @@
               />
 
               <!-- message -->
-              <div class="features-message" data-aos="zoom-out-left">
+              <div
+                class="features-message hidden-mobile"
+                data-aos="zoom-out-left"
+              >
                 <img
                   src="./assets/icons/check.svg"
                   alt=""
@@ -377,7 +437,7 @@
               </div>
             </figure>
           </div>
-          <div class="col-lg-5 col-md-12 col-sm-12 offset-lg-1">
+          <div class="col-lg-5 col-md-12 col-sm-12 col-12 offset-lg-1">
             <section class="features__info">
               <p class="section-title features-info__title">
                 Digital Smart Wallet
@@ -423,7 +483,7 @@
       <!-- payment -->
       <section class="payment">
         <div class="row">
-          <div class="col-lg-5 col-md-12 col-sm-12">
+          <div class="col-lg-5 col-md-12 col-sm-12 col-12">
             <section class="payment__info">
               <p class="section-title">Digital Smart Wallet</p>
               <h2 class="section-heading lv2 payment__heading">
@@ -444,7 +504,7 @@
               <a href="" class="btn payment__btn">Get Started</a>
             </section>
           </div>
-          <div class="col-lg-6 col-md-12 col-sm-12 offset-lg-1">
+          <div class="col-lg-6 col-md-12 col-sm-12 col-12 offset-lg-1">
             <div class="payment__card-inner">
               <!-- cards -->
               <div class="payment__card">
@@ -527,7 +587,7 @@
       <!-- transfer -->
       <section class="transfer">
         <div class="row">
-          <div class="col-lg-6 col-md-12 col-sm-12">
+          <div class="col-lg-6 col-md-12 col-sm-12 col-12">
             <figure class="transfer__images">
               <div class="transfer-images__wrap">
                 <img
@@ -601,7 +661,7 @@
             </figure>
           </div>
 
-          <div class="col-lg-5 col-md-12 col-sm-12 offset-lg-1">
+          <div class="col-lg-5 col-md-12 col-sm-12 col-12 offset-lg-1">
             <section class="payment__info">
               <p class="section-title">Digital Smart Wallet</p>
               <h2 class="section-heading lv2 payment__heading">
@@ -643,7 +703,7 @@
         <!-- feedback - list -->
         <div class="feedback__list">
           <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-12">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
               <div class="feedback__item">
                 <blockquote class="feedback-item__quote">
                   Fantastic platform for online banking. The best online banking
@@ -663,7 +723,7 @@
               </div>
             </div>
 
-            <div class="col-lg-6 col-md-6 col-sm-12">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
               <div class="feedback__item">
                 <blockquote class="feedback-item__quote">
                   Fantastic platform for online banking. The best online banking
@@ -717,7 +777,7 @@
         <div class="updates__blogs">
           <div class="row">
             <!-- col 1 -->
-            <div class="col-lg-6 col-md-12 col-sm-12">
+            <div class="col-lg-6 col-md-12 col-sm-12 col-12">
               <a href="#!">
                 <article class="updates__blog">
                   <figure class="updates-blog__images">
@@ -740,7 +800,7 @@
             </div>
 
             <!-- col 2 -->
-            <div class="col-lg-6 col-md-12 col-sm-12">
+            <div class="col-lg-6 col-md-12 col-sm-12 col-12">
               <a href="#!">
                 <article class="updates__blog">
                   <figure class="updates-blog__images">
@@ -762,7 +822,7 @@
             </div>
 
             <!-- col 3 -->
-            <div class="col-lg-6">
+            <div class="col-lg-6 col-md-12 col-sm-12 col-12">
               <a href="#!">
                 <article class="updates__blog">
                   <figure class="updates-blog__images">
@@ -784,7 +844,7 @@
             </div>
 
             <!-- col 4 -->
-            <div class="col-lg-6">
+            <div class="col-lg-6 col-md-12 col-sm-12 col-12">
               <a href="#!">
                 <article class="updates__blog">
                   <figure class="updates-blog__images">
@@ -844,25 +904,25 @@
         <img
           src="./assets/icons/dowload-deco.svg"
           alt=""
-          class="downloads__deco wow animate__rotateIn"
+          class="downloads__deco hidden-mobile wow animate__rotateIn"
           data-wow-iteration="2"
         />
         <img
           src="./assets/icons/dowload-deco.svg"
           alt=""
-          class="downloads__deco wow animate__rotateOut"
+          class="downloads__deco hidden-mobile wow animate__rotateOut"
           data-wow-iteration="2"
         />
         <img
           src="./assets/icons/dowload-deco2.svg"
           alt=""
-          class="downloads__deco wow animate__rotateIn"
+          class="downloads__deco hidden-mobile wow animate__rotateIn"
           data-wow-iteration="2"
         />
         <img
           src="./assets/icons/dowload-deco2.svg"
           alt=""
-          class="downloads__deco wow animate__rotateOut"
+          class="downloads__deco hidden-mobile wow animate__rotateOut"
           data-wow-iteration="2"
         />
       </section>
