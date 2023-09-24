@@ -833,6 +833,7 @@ textarea {
   background-color: #fff;
   border-radius: 8px;
   border: 1px solid #dfe2e8;
+  cursor: pointer;
 
   transition: filter 0.2s ease-in-out, border-color 0.2s ease-in-out;
 }
